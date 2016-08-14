@@ -5,7 +5,7 @@ Geojob::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'static_pages#index'
+  root 'events#index'
 
   resources :events
   resources :items
