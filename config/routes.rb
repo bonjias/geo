@@ -6,6 +6,11 @@ Geojob::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'static_pages#index'
+
+  resources :events
+  resources :items
+  resources :markets
+  resources :bids
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
