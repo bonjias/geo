@@ -1,5 +1,15 @@
 
-<div> 
-<h1><%= @event.inspect=%></h1>
-h1><%= @event.address=%></h1>
-</div>
+<% @events.each do |event| %>
+  <div class = "glass">
+    <h1><%= event.name %></h1><br />
+    <i><%= event.address %></i><br />
+    <p><%= event.description %></p><br />
+  
+<% if event.user.present? %>
+      <small><%= event.user.email %></small>
+    <% end %>
+
+  </div>
+
+  <hr />
+<% end %>

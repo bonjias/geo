@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-
+before_action :authenticate_user!, only: [:new, :create]
   def index
-    @event = Event.last
+    @events = Event.all
 end
 
 
@@ -10,7 +10,7 @@ def new
   end
 
   def create
-    Event.create(event_params)
+    current_user.events.create(event_params)
     redirect_to root_path
   end
 
